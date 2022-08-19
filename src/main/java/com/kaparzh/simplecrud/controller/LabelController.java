@@ -1,30 +1,32 @@
 package com.kaparzh.simplecrud.controller;
 
 import com.kaparzh.simplecrud.model.Label;
-import com.kaparzh.simplecrud.repository.GsonLabelRepositoryImpl;
+import com.kaparzh.simplecrud.repository.gson.GsonLabelRepositoryImpl;
 import com.kaparzh.simplecrud.repository.LabelRepository;
+
+import java.util.List;
 
 public class LabelController {
 
-    private static final LabelRepository labels = new GsonLabelRepositoryImpl();
+    private final LabelRepository labels = new GsonLabelRepositoryImpl();
 
-    public void createLabel(int id, String labelName) {
-        labels.save(new Label(id, labelName));
+    public Label createLabel(int id, String labelName) {
+        return labels.save(new Label(id, labelName));
     }
 
-    public void getAll() {
-        labels.getAll();
+    public List<Label> getAll() {
+        return labels.getAll();
     }
 
     public void deleteById(int id) {
         labels.deleteById(id);
     }
 
-    public void updateLabel(int id, String labelName) {
-        labels.update(new Label(id, labelName));
+    public Label updateLabel(int id, String labelName) {
+        return labels.update(new Label(id, labelName));
     }
 
-    public void getById(int id) {
-        labels.getById(id);
+    public Label getById(int id) {
+        return labels.getById(id);
     }
 }

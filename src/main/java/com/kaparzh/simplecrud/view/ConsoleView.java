@@ -3,8 +3,14 @@ package com.kaparzh.simplecrud.view;
 import java.util.Scanner;
 
 import static com.kaparzh.simplecrud.view.LabelView.LABEL_MENU;
+import static com.kaparzh.simplecrud.view.PostView.POST_MENU;
+import static com.kaparzh.simplecrud.view.WriterView.WRITER_MENU;
 
 public class ConsoleView {
+
+    private final WriterView writerView = new WriterView();
+    private final LabelView labelView = new LabelView();
+    private final PostView postView = new PostView();
 
     private static final String WELCOME_MESSAGE = "Welcome!\n" +
             "Select sections:\n" +
@@ -20,16 +26,21 @@ public class ConsoleView {
             int select = sc.nextInt();
             switch (select) {
                 case 1:
+                    System.out.println(WRITER_MENU);
+                    int writerMenuSelectValue = sc.nextInt();
+                    writerView.writerViewRunner(writerMenuSelectValue);
                     break;
 
                 case 2:
+                    System.out.println(POST_MENU);
+                    int postMenuSelectValue = sc.nextInt();
+                    postView.postViewRunner(postMenuSelectValue);
                     break;
 
                 case 3:
-                    LabelView labelView = new LabelView();
                     System.out.println(LABEL_MENU);
-                    int selectValue = sc.nextInt();
-                    labelView.labelViewRunner(selectValue);
+                    int labelMenuSelectValue = sc.nextInt();
+                    labelView.labelViewRunner(labelMenuSelectValue);
                     break;
 
                 case 4:

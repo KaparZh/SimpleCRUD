@@ -1,7 +1,9 @@
 package com.kaparzh.simplecrud.view;
 
 import com.kaparzh.simplecrud.controller.LabelController;
+import com.kaparzh.simplecrud.model.Label;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class LabelView {
@@ -42,7 +44,8 @@ public class LabelView {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter label id:");
         int id = Integer.parseInt(sc.nextLine());
-        labelController.getById(id);
+        Label label = labelController.getById(id);
+        System.out.println("Label: " + label);
     }
 
     private void deleteLabel() {
@@ -58,19 +61,23 @@ public class LabelView {
         int id = Integer.parseInt(sc.nextLine());
         System.out.println("Enter label name");
         String labelName = sc.nextLine();
-        labelController.createLabel(id, labelName);
+        Label label = labelController.createLabel(id, labelName);
+        System.out.println("Created label: " + label);
     }
 
     private void updateLabel() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter label id");
         int id = Integer.parseInt(sc.nextLine());
-        System.out.println("Enter label name");
+        System.out.println("Enter new label name");
+
         String labelName = sc.nextLine();
-        labelController.updateLabel(id, labelName);
+        Label label = labelController.updateLabel(id, labelName);
+        System.out.println("Updated label: " + label);
     }
 
     private void getAll() {
-        labelController.getAll();
+        List<Label> labels = labelController.getAll();
+        labels.forEach(System.out::println);
     }
 }

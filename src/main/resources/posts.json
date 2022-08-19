@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "content": "Sport is good. Yoga is good.",
+    "created": 1660848357887,
+    "updated": 1660848357887,
+    "labels": [
+      {
+        "id": 1,
+        "name": "sport"
+      },
+      {
+        "id": 3,
+        "name": "Yoga"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "content": "Films. Horrors. Fantasy",
+    "created": 1660849659175,
+    "updated": 1660849659175,
+    "labels": [
+      {
+        "id": 2,
+        "name": "Cinema"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "content": "test",
+    "created": 1660899062763,
+    "updated": 1660906919511,
+    "labels": [
+      {
+        "id": 2,
+        "name": "Cinema"
+      },
+      {
+        "id": 3,
+        "name": "Yoga"
+      },
+      {
+        "id": 1,
+        "name": "sport"
+      }
+    ]
+  }
+]
